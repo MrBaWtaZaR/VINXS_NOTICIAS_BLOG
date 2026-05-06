@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VINXS Notícias | Edição 06/05/2026</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#C0392B',
+            brandDark: '#922B21',
+            brandLight: '#FADBD8',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .ticker-wrap { overflow: hidden; white-space: nowrap; }
+    .ticker-move { display: inline-block; animation: ticker 30s linear infinite; }
+    @keyframes ticker { 0% { transform: translateX(100vw); } 100% { transform: translateX(-100%); } }
+    .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+    .sidebar-link { transition: background 0.15s ease; }
+    .sidebar-link:hover { background: rgba(192,57,43,0.1); }
+    .badge-new { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f1f1; }
+    ::-webkit-scrollbar-thumb { background: #C0392B; border-radius: 3px; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- TOP BAR -->
+<div class="bg-brand text-white text-xs py-1.5 px-4">
+  <div class="max-w-screen-xl mx-auto flex justify-between items-center">
+    <span class="font-semibold tracking-wide">VINXS NOTÍCIAS &bull; MODA &amp; TÊXTIL</span>
+    <span id="live-time" class="font-mono"></span>
+  </div>
+</div>
+
+<!-- TICKER DE NOTÍCIAS -->
+<div class="bg-gray-900 text-yellow-300 text-sm py-1.5 ticker-wrap">
+  <span class="ticker-move font-medium">
+    🔴 AO VIVO &nbsp;|&nbsp; MET GALA 2026: "Fashion is Art" domina tapete vermelho com Beyoncé e Rihanna &nbsp;|&nbsp;
+    🧵 Moda Center bate recorde com 100 mil visitantes no feriado de 1º de Maio &nbsp;|&nbsp;
+    ♻️ Inaugurado primeiro Centro de Reciclagem de Tecido do Agreste em Santa Cruz do Capibaribe &nbsp;|&nbsp;
+    🏙️ Estação Fashion consolida Fortaleza como maior polo atacadista do Nordeste &nbsp;|&nbsp;
+    📦 Feira da Madrugada do Brás: guia atualizado para compras em 2026 &nbsp;|&nbsp;
+    📱 TikTok Shop: vestidos decote em V e jeans cintura alta lideram vendas de moda no Brasil
+  </span>
+</div>
+
+<!-- HEADER PRINCIPAL -->
+<header class="bg-white shadow-sm border-b-4 border-brand">
+  <div class="max-w-screen-xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-3">
+    <div class="flex items-center gap-3">
+      <div class="bg-brand rounded-lg px-3 py-2">
+        <span class="text-white font-black text-2xl tracking-tight">VINXS</span>
+      </div>
+      <div>
+        <h1 class="text-xl font-black text-gray-900 leading-tight">NOTÍCIAS DA MODA</h1>
+        <p class="text-xs text-gray-500 font-medium">Cobertura Completa do Setor Têxtil Brasileiro</p>
+      </div>
+    </div>
+    <div class="text-center md:text-right">
+      <div class="inline-flex items-center gap-2 bg-red-50 border border-red-200 rounded-full px-4 py-1.5">
+        <span class="w-2 h-2 bg-brand rounded-full badge-new"></span>
+        <span class="text-brand font-bold text-sm">EDIÇÃO DIÁRIA</span>
+      </div>
+      <p class="text-gray-500 text-xs mt-1">Quarta-feira, 06 de maio de 2026</p>
+    </div>
+  </div>
+</header>
+
+<!-- LAYOUT PRINCIPAL -->
+<div class="max-w-screen-xl mx-auto px-4 py-6 flex gap-6">
+
+  <!-- SIDEBAR -->
+  <aside class="hidden lg:block w-64 flex-shrink-0">
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden sticky top-4">
+      <div class="bg-brand px-4 py-3">
+        <h2 class="text-white font-bold text-sm tracking-wide uppercase">📅 Edições Anteriores</h2>
+      </div>
+      <nav class="p-2">
+        <a href="noticia_2026-05-06.html"
+           class="sidebar-link flex items-center gap-2 px-3 py-2 rounded-lg bg-red-50 text-brand font-semibold text-sm mb-1">
+          <span class="w-1.5 h-1.5 bg-brand rounded-full"></span>
+          06/05/2026 <span class="ml-auto text-xs bg-brand text-white rounded px-1.5 py-0.5">HOJE</span>
+        </a>
+        <p class="text-xs text-gray-400 text-center py-4 px-2">
+          As próximas edições aparecerão aqui automaticamente.
+        </p>
+      </nav>
+      <div class="border-t border-gray-100 p-3">
+        <p class="text-xs text-gray-400 font-medium uppercase tracking-wide mb-2">Seções</p>
+        <a href="#internacional" class="sidebar-link flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm text-gray-600 hover:text-brand">🌍 Moda Internacional</a>
+        <a href="#agreste" class="sidebar-link flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm text-gray-600 hover:text-brand">🧵 Polo Agreste (PE)</a>
+        <a href="#fortaleza" class="sidebar-link flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm text-gray-600 hover:text-brand">🌊 Polo Fortaleza (CE)</a>
+        <a href="#bras" class="sidebar-link flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm text-gray-600 hover:text-brand">🏙️ Polo Brás (SP)</a>
+        <a href="#tiktok" class="sidebar-link flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm text-gray-600 hover:text-brand">📱 TikTok Shop</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="flex-1 min-w-0">
+
+    <!-- HERO / DESTAQUE -->
+    <section class="bg-gradient-to-r from-gray-900 to-gray-700 rounded-2xl overflow-hidden mb-8 relative">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+      <img
+        src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1200&q=80"
+        alt="MET Gala 2026"
+        class="w-full h-72 object-cover opacity-60"
+      />
+      <div class="absolute bottom-0 left-0 right-0 p-6">
+        <span class="bg-brand text-white text-xs font-bold uppercase px-3 py-1 rounded-full">🔥 Destaque do Dia</span>
+        <h2 class="text-white text-2xl font-black mt-2 leading-tight">MET GALA 2026: "Fashion is Art" Redefine o Tapete Vermelho</h2>
+        <p class="text-gray-300 text-sm mt-1">Beyoncé, Rihanna e Katy Perry dominam a noite mais glamourosa da moda com looks que misturam arte e alta costura</p>
+        <div class="flex items-center gap-3 mt-3">
+          <span class="text-gray-400 text-xs">📍 Nova York, EUA</span>
+          <span class="text-gray-400 text-xs">•</span>
+          <span class="text-gray-400 text-xs">🕐 04 de maio de 2026</span>
+          <a href="https://www.cnn.com/2026/05/04/style/met-gala-2026-best-red-carpet-looks" target="_blank"
+             class="ml-auto bg-white/20 hover:bg-white/30 text-white text-xs px-3 py-1 rounded-full transition">Ler mais →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SEÇÃO 1: MODA INTERNACIONAL ===== -->
+    <section id="internacional" class="mb-10">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="h-8 w-1.5 bg-brand rounded-full"></div>
+        <h2 class="text-2xl font-black text-gray-900">🌍 Moda Internacional</h2>
+        <span class="ml-auto text-xs text-gray-400 bg-gray-100 px-3 py-1 rounded-full">06/05/2026</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+
+        <!-- Card 1: MET Gala Beyoncé -->
+        <article class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 card-hover">
+          <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=80" alt="Beyoncé MET Gala" class="w-full h-44 object-cover" />
+          <div class="p-4">
+            <span class="text-xs font-bold text-brand uppercase tracking-wide">MET Gala 2026</span>
+            <h3 class="font-bold text-gray-900 mt-1 text-sm leading-snug">Beyoncé de Olivier Rousteing: vestido esquelético customizado choca o tapete vermelho</h3>
+            <p class="text-gray-500 text-xs mt-2 leading-relaxed">A cantora fez sua grande volta ao MET Gala com uma criação sensacional do designer Olivier Rousteing, fusão entre corpo e arte que personificou o tema "Fashion is Art".</p>
+            <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-50">
+              <span class="text-xs text-gray-400">📰 WWD / CBS News</span>
+              <a href="https://wwd.com/pop-culture/celebrity-news/gallery/met-gala-2026-couple-style-photos-1238942769/" target="_blank" class="text-brand text-xs font-semibold hover:underline">Ver fonte →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Rihanna MET Gala -->
+        <article class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 card-hover">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80" alt="Rihanna MET Gala" class="w-full h-44 object-cover" />
+          <div class="p-4">
+            <span class="text-xs font-bold text-brand uppercase tracking-wide">MET Gala 2026</span>
+            <h3 class="font-bold text-gray-900 mt-1 text-sm leading-snug">Rihanna encerra noite com look metálico drapeado da Maison Margiela por Glenn Martens</h3>
+            <p class="text-gray-500 text-xs mt-2 leading-relaxed">A última a chegar ao tapete vermelho com A$AP Rocky, Rihanna surpreendeu em couture Maison Margiela com silhueta futurista e acabamento artístico impecável.</p>
+            <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-50">
+              <span class="text-xs text-gray-400">📰 Yahoo Entertainment</span>
+              <a href="https://www.yahoo.com/entertainment/celebrity/live/met-gala-2026-live-updates-how-and-when-to-watch-beyonce-sabrina-carpenter-and-more-walk-the-red-carpet-on-fashions-biggest-night-140000989.html" target="_blank" class="text-brand text-xs font-semibold hover:underline">Ver fonte →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Tendências Alta Costura -->
+        <article class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 card-hover">
+          <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=600&q=80" alt="Alta Costura Tendencias" class="w-full h-44 object-cover" />
+          <div class="p-4">
+            <span class="text-xs font-bold text-brand uppercase tracking-wide">Alta Costura</span>
+            <h3 class="font-bold text-gray-900 mt-1 text-sm leading-snug">Primavera 2026: Natureza, pássaros e cores cítricas dominam a alta-costura internacional</h3>
+            <p class="text-gray-500 text-xs mt-2 leading-relaxed">Laranjas, vermelhos e tons cítricos lideram a temporada. Flora e fauna inspiram bordados delicados enquanto o maximalismo toma força ao lado do slow fashion artesanal.</p>
+            <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-50">
+              <span class="text-xs text-gray-400">📰 ELLE Brasil / Steal the Look</span>
+              <a href="https://elle.com.br/moda/5-tendencias-do-verao-2026-de-alta-costura" target="_blank" class="text-brand text-xs font-semibold hover:underline">Ver fonte →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Emma Chamberlain Mugler -->
+        <article class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 card-hover">
+          <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=600&q=80" alt="Emma Chamberlain Mugler" class="w-full h-44 object-cover" />
+          <div class="p-4">
+            <span class="text-xs font-bold text-brand uppercase tracking-wide">MET Gala 2026</span>
+            <h3 class="font-bold text-gray-900 mt-1 text-sm leading-snug">Emma Chamberlain usa Mugler pintado à mão com inspiração impressionista no MET Gala</h3>
+            <p class="text-gray-500 text-xs mt-2 leading-relaxed">A criadora de conteúdo apareceu com uma gown custom Mugler de fluidos azuis profundos pintados à mão, remetendo ao período Impressionista da arte clássica.</p>
+            <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-50">
+              <span class="text-xs text-gray-400">📰 Who What Wear</span>
+              <a href="https://www.whowhatwear.com/fashion/red-carpet/met-gala-2026-best-dressed-red-carpet" target="_blank" class="text-brand text-xs font-semibold hover:underline">Ver fonte →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5: Katy Perry Stella McCartney -->
+        <article class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 card-hover">
+          <img src="https://images.unsplash.com/photo-1542295669297-4d352b042bca?w=600&q=80" alt="Katy Perry Stella McCartney" class="w-full h-44 object-cover" />
+          <div class="p-4">
+            <span class="text-xs font-bold text-brand uppercase tracking-wide">MET Gala 2026</span>
+            <h3 class="font-bold text-gray-900 mt-1 text-sm leading-snug">Katy Perry revela identidade embaixo de máscara prateada em gown esculpido Stella McCartney</h3>
+            <p class="text-gray-500 text-xs mt-2 leading-relaxed">Em um dos momentos mais teatrais da noite, Katy Perry chegou mascarada com a identidade secreta revelada ao vivo no tapete vermelho do MET Gala 2026.</p>
+            <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-50">
+              <span class="text-xs text-gray-400">📰 Variety / NPR</span>
+              <a href="https://variety.com/gallery/met-gala-2026-red-carpet-photos-best-celebrity-looks/" target="_blank" class="text-brand text-xs font-semibold hover:underline">Ver fonte →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6: Tendências 2026 Geral -->
+        <article class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 card-hover">
+          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80" alt="Tendencias Maximalismo 2026" class="w-full h-44 object-cover" />
+          <div class="p-4">
+            <span class="text-xs font-bold text-brand uppercase tracking-wide">Tendências Globais</span>
+            <h3 class="font-bold text-gray-900 mt-1 text-sm leading-snug">Maximalismo vs. Slow Fashion: os dois movimentos que definem 2026</h3>
+            <p class="text-gray-500 text-xs mt-2 leading-relaxed">Crochê, tricô e bordados artesanais ganham força no slow fashion, enquanto sobreposições ousadas, cores intensas e acessórios statement definem o maximalismo que domina 2026.</p>
+            <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-50">
+              <span class="text-xs text-gray-400">📰 Blog Passaporte Fashionista</span>
+              <a href="https://blog.passaportefashionista.com/6-tendencias-que-seguirao-em-2026/" target="_blank" class="text-brand text-xs font-semibold hover:underline">Ver fonte →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== SEÇÃO 2: POLO AGRESTE (PE) ===== -->
+    <section id="agreste" class="mb-10">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="h-8 w-1.5 bg-orange-500 rounded-full"></div>
+        <h2 class="text-2xl font-black text-gray-900">🧵 Polo do Agreste — Moda Center (PE)</h2>
+        <span class="ml-auto text-xs text-gray-400 bg-gray-100 px-3 py-1 rounded-full">Santa Cruz · Toritama · Caruaru</span>
+      </div>
+
+      <!-- BANNER DESTAQUE AGRESTE -->
+      <div class="bg-gradient-to-r from-orange-600 to-orange-400 rounded-xl p-5 mb-5 text-white flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <p class="text-orange-100 text-xs font-semibold uppercase tracking-wide">🔥 Breaking News</p>
+          <h3 class="font-black text-lg leading-tight">100 MIL VISITANTES no Moda Center no feriado de 1º de Maio</h3>
+          <p class="text-orange-100 text-sm mt-1">Alta temporada junina iniciada! Feiras às quintas (12h–18h) e sextas (5h–17h) até final de junho.</p>
+        </div>
+        <a href="https://www.blogdobrunomuniz.com.br/2026/05/mais-de-100-mil-pessoas-comparecem-ao.html" target="_blank"
+           class="bg-white text-orange-600 font-bold text-sm px-4 py-2 rounded-full hover:bg-orange-50 transition whitespace-nowrap">
+          Leia mais →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+
+        <!-- Recria Moda -->
+        <article class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 card-hover">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Reciclagem Textil" class="w-full h-40 object-cover" />
+          <div class="p-4">
+            <span class="text-xs font-bold text-orange-500 uppercase tracking-wide">♻️ Sustentabilidade</span>
+            <h3 class="font-bold text-gray-900 mt-1 text-sm leading-snug">Inaugurado o 1º Centro de Reciclagem de Tecido do Agreste em Santa Cruz do Capibaribe</h3>
+            <p class="text-gray-500 text-xs mt-2 leading-relaxed">O Recria Moda Santa Cruz transforma resíduos têxteis em novos produtos, impulsionando a economia circular e gerando novos empregos no polo. Inauguração ocorreu em 04/05/2026.</p>
+            <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-50">
+              <span class="text-xs text-gray-400">📰 Jornal Portal do Sertão</span>
+              <a href="https://www.jornalportaldosertao.com.br/com-articulacao-de-felipe-carreras-programa-recria-moda-santa-cruz-e-inaugurado-e-implanta-o-1o-centro-de-reciclagem-de-tecido-do-agreste" target="_blank" class="text-orange-500 text-xs font-semibold hover:underline">Ver fonte →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Moda Center Log -->
+        <article class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 card-hover">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80" alt="Logistica Moda Center" class="w-full h-40 object-cover" />
+          <div class="p-4">
+            <span class="text-xs font-bold text-orange-500 uppercase tracking-wide">🚚 Logística</span>
+            <h3 class="font-bold text-gray-900 mt-1 text-sm leading-snug">Moda Center expande Moda Center Log com parceria estratégica com os Correios</h3>
+            <p class="text-gray-500 text-xs mt-2 leading-relaxed">Nova parceria garante mais segurança e eficiência nos envios para comerciantes e compradores de todo Brasil. Serviço facilita logística de excursões e transportadoras.</p>
+            <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-50">
+              <span class="text-xs text-gray-400">📰 Blog do Moda Center</span>
+              <a href="https://www.blogdomodacenter.com.br/" target="_blank" class="text-orange-500 text-xs font-semibold hover:underline">Ver fonte →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- TOP 10 PRODUTOS AGRESTE -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+        <div class="bg-orange-500 px-5 py-3 flex items-center gap-2">
+          <span class="text-white font-black text-lg">🏆 TOP 10</span>
+          <span class="text-orange-100 font-semibold text-sm">Produtos em Alta no Polo Agreste — Temporada Junina 2026</span>
+        </div>
+        <div class="p-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex items-start gap-3 p-3 bg-orange-50 rounded-lg">
+              <span class="text-2xl font-black text-orange-300 w-8 text-center">1</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Vestidos Juninos Femininos</p>
+                <p class="text-xs text-gray-500">A partir de R$ 25,00/pç (atacado)</p>
+                <a href="https://pernambucomoda.com.br/resultadoBusca?procura=Atacado" target="_blank" class="text-xs text-orange-500 font-semibold hover:underline">Buscar fornecedor →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-orange-50 rounded-lg">
+              <span class="text-2xl font-black text-orange-300 w-8 text-center">2</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Camisas Xadrez Masculinas</p>
+                <p class="text-xs text-gray-500">A partir de R$ 18,00/pç (atacado)</p>
+                <a href="https://pernambucomoda.com.br/resultadoBusca?procura=Atacado" target="_blank" class="text-xs text-orange-500 font-semibold hover:underline">Buscar fornecedor →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-orange-50 rounded-lg">
+              <span class="text-2xl font-black text-orange-300 w-8 text-center">3</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Shorts Jeans Feminino Cintura Alta</p>
+                <p class="text-xs text-gray-500">A partir de R$ 22,00/pç</p>
+                <a href="https://pernambucomoda.com.br/resultadoBusca?procura=Atacado" target="_blank" class="text-xs text-orange-500 font-semibold hover:underline">Buscar fornecedor →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-orange-50 rounded-lg">
+              <span class="text-2xl font-black text-orange-300 w-8 text-center">4</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Camisetas Tie-Dye Infantil</p>
+                <p class="text-xs text-gray-500">A partir de R$ 12,00/pç</p>
+                <a href="https://pernambucomoda.com.br/resultadoBusca?procura=Atacado" target="_blank" class="text-xs text-orange-500 font-semibold hover:underline">Buscar fornecedor →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-orange-50 rounded-lg">
+              <span class="text-2xl font-black text-orange-300 w-8 text-center">5</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Conjunto Caipira Temático</p>
+                <p class="text-xs text-gray-500">A partir de R$ 45,00/conjunto</p>
+                <a href="https://pernambucomoda.com.br/resultadoBusca?procura=Atacado" target="_blank" class="text-xs text-orange-500 font-semibold hover:underline">Buscar fornecedor →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-orange-50 rounded-lg">
+              <span class="text-2xl font-black text-orange-300 w-8 text-center">6</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Calça Social Masculina</p>
+                <p class="text-xs text-gray-500">A partir de R$ 35,00/pç</p>
+                <a href="https://pernambucomoda.com.br/resultadoBusca?procura=Atacado" target="_blank" class="text-xs text-orange-500 font-semibold hover:underline">Buscar fornecedor →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-orange-50 rounded-lg">
+              <span class="text-2xl font-black text-orange-300 w-8 text-center">7</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Blusa Cropped Estampada</p>
+                <p class="text-xs text-gray-500">A partir de R$ 14,00/pç</p>
+                <a href="https://pernambucomoda.com.br/resultadoBusca?procura=Atacado" target="_blank" class="text-xs text-orange-500 font-semibold hover:underline">Buscar fornecedor →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-orange-50 rounded-lg">
+              <span class="text-2xl font-black text-orange-300 w-8 text-center">8</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Macaquinho Jeans Feminino</p>
+                <p class="text-xs text-gray-500">A partir de R$ 38,00/pç</p>
+                <a href="https://pernambucomoda.com.br/resultadoBusca?procura=Atacado" target="_blank" class="text-xs text-orange-500 font-semibold hover:underline">Buscar fornecedor →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-orange-50 rounded-lg">
+              <span class="text-2xl font-black text-orange-300 w-8 text-center">9</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Chapéu de Palha Junino</p>
+                <p class="text-xs text-gray-500">A partir de R$ 8,00/pç</p>
+                <a href="https://pernambucomoda.com.br/resultadoBusca?procura=Atacado" target="_blank" class="text-xs text-orange-500 font-semibold hover:underline">Buscar fornecedor →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-orange-50 rounded-lg">
+              <span class="text-2xl font-black text-orange-300 w-8 text-center">10</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Vestido Midi Floral Feminino</p>
+                <p class="text-xs text-gray-500">A partir de R$ 32,00/pç</p>
+                <a href="https://pernambucomoda.com.br/resultadoBusca?procura=Atacado" target="_blank" class="text-xs text-orange-500 font-semibold hover:underline">Buscar fornecedor →</a>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs text-gray-400 mt-4 text-center">* Preços estimados para compra no atacado. Consulte o fornecedor para valores atualizados. Fonte: <a href="https://www.blogdomodacenter.com.br/" class="hover:underline">Blog do Moda Center</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SEÇÃO 3: POLO FORTALEZA (CE) ===== -->
+    <section id="fortaleza" class="mb-10">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="h-8 w-1.5 bg-blue-500 rounded-full"></div>
+        <h2 class="text-2xl font-black text-gray-900">🌊 Polo de Fortaleza — Têxtil Cearense (CE)</h2>
+        <span class="ml-auto text-xs text-gray-400 bg-gray-100 px-3 py-1 rounded-full">Fortaleza · Sítio Alegre</span>
+      </div>
+
+      <!-- BANNER FORTALEZA -->
+      <div class="bg-gradient-to-r from-blue-700 to-cyan-500 rounded-xl p-5 mb-5 text-white flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <p class="text-blue-100 text-xs font-semibold uppercase tracking-wide">📅 Próximo Evento</p>
+          <h3 class="font-black text-lg leading-tight">DFB FESTIVAL 2026 — Dragão Fashion Brasil na Praia de Iracema</h3>
+          <p class="text-blue-100 text-sm mt-1">9 a 12 de junho • Desfiles, shows e celebração dos 300 anos de Fortaleza</p>
+        </div>
+        <a href="https://gcmais.com.br/entretenimento/2026/04/28/dragao-fashion-brasil-anuncia-line-up-e-retorno-a-praia-de-iracema-em-fortaleza/" target="_blank"
+           class="bg-white text-blue-600 font-bold text-sm px-4 py-2 rounded-full hover:bg-blue-50 transition whitespace-nowrap">
+          Ver programação →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+
+        <!-- Estação Fashion -->
+        <article class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 card-hover">
+          <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=600&q=80" alt="Estacao Fashion Fortaleza" class="w-full h-40 object-cover" />
+          <div class="p-4">
+            <span class="text-xs font-bold text-blue-500 uppercase tracking-wide">🏬 Novo Polo</span>
+            <h3 class="font-bold text-gray-900 mt-1 text-sm leading-snug">Estação Fashion consolida Fortaleza: 1.300 lojas previstas e 12 mil empregos diretos e indiretos</h3>
+            <p class="text-gray-500 text-xs mt-2 leading-relaxed">O maior polo atacadista do Nordeste expande para 1.300 lojas em 2026. Inaugurado com 500 pontos de venda, já se torna referência nacional em moda atacado com impacto de 12 mil empregos.</p>
+            <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-50">
+              <span class="text-xs text-gray-400">📰 Portal IN / Diário do Nordeste</span>
+              <a href="https://www.portalin.com.br/negocios/estacao-fashion-amplia-horarios-e-se-consolida-como-polo-da-moda-atacadista/" target="_blank" class="text-blue-500 text-xs font-semibold hover:underline">Ver fonte →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 26 mil empresas -->
+        <article class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 card-hover">
+          <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=600&q=80" alt="Polo Textil Fortaleza" class="w-full h-40 object-cover" />
+          <div class="p-4">
+            <span class="text-xs font-bold text-blue-500 uppercase tracking-wide">📊 Mercado</span>
+            <h3 class="font-bold text-gray-900 mt-1 text-sm leading-snug">Fortaleza consolida setor: mais de 26 mil empresas ativas na cadeia da moda cearense</h3>
+            <p class="text-gray-500 text-xs mt-2 leading-relaxed">Centro Fashion lidera com 2.863 CNPJs. Jacarecanga (847), Aldeota (661) e Barra do Ceará (652) formam o eixo têxtil da capital cearense que cresce aliado à tecnologia e sustentabilidade.</p>
+            <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-50">
+              <span class="text-xs text-gray-400">📰 Ceará e Notícia</span>
+              <a href="https://www.cearaenoticia.com.br/2026/02/da-confeccao-ao-varejo-cadeia-da-moda.html" target="_blank" class="text-blue-500 text-xs font-semibold hover:underline">Ver fonte →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- TOP 10 PRODUTOS FORTALEZA -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+        <div class="bg-blue-500 px-5 py-3 flex items-center gap-2">
+          <span class="text-white font-black text-lg">🏆 TOP 10</span>
+          <span class="text-blue-100 font-semibold text-sm">Produtos em Alta no Polo de Fortaleza — Maio 2026</span>
+        </div>
+        <div class="p-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
+              <span class="text-2xl font-black text-blue-300 w-8 text-center">1</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Rasteirinha Feminina em Couro</p>
+                <p class="text-xs text-gray-500">A partir de R$ 19,90/pç</p>
+                <a href="https://www.estacaofashionfortaleza.com.br" target="_blank" class="text-xs text-blue-500 font-semibold hover:underline">Estação Fashion →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
+              <span class="text-2xl font-black text-blue-300 w-8 text-center">2</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Bermuda Masculina em Sarja</p>
+                <p class="text-xs text-gray-500">A partir de R$ 24,00/pç</p>
+                <a href="https://www.centrofashionfortaleza.com.br" target="_blank" class="text-xs text-blue-500 font-semibold hover:underline">Centro Fashion →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
+              <span class="text-2xl font-black text-blue-300 w-8 text-center">3</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Vestido Linho Longo Feminino</p>
+                <p class="text-xs text-gray-500">A partir de R$ 42,00/pç</p>
+                <a href="https://www.estacaofashionfortaleza.com.br" target="_blank" class="text-xs text-blue-500 font-semibold hover:underline">Estação Fashion →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
+              <span class="text-2xl font-black text-blue-300 w-8 text-center">4</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Camiseta Algodão Premium Masculina</p>
+                <p class="text-xs text-gray-500">A partir de R$ 16,00/pç</p>
+                <a href="https://www.centrofashionfortaleza.com.br" target="_blank" class="text-xs text-blue-500 font-semibold hover:underline">Centro Fashion →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
+              <span class="text-2xl font-black text-blue-300 w-8 text-center">5</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Conjunto Moda Praia (Biquíni + Saída)</p>
+                <p class="text-xs text-gray-500">A partir de R$ 55,00/conjunto</p>
+                <a href="https://www.estacaofashionfortaleza.com.br" target="_blank" class="text-xs text-blue-500 font-semibold hover:underline">Estação Fashion →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
+              <span class="text-2xl font-black text-blue-300 w-8 text-center">6</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Boné e Acessórios de Praia</p>
+                <p class="text-xs text-gray-500">A partir de R$ 9,90/pç</p>
+                <a href="https://www.centrofashionfortaleza.com.br" target="_blank" class="text-xs text-blue-500 font-semibold hover:underline">Centro Fashion →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
+              <span class="text-2xl font-black text-blue-300 w-8 text-center">7</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Vestido Viscose Estampado</p>
+                <p class="text-xs text-gray-500">A partir de R$ 28,00/pç</p>
+                <a href="https://www.estacaofashionfortaleza.com.br" target="_blank" class="text-xs text-blue-500 font-semibold hover:underline">Estação Fashion →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
+              <span class="text-2xl font-black text-blue-300 w-8 text-center">8</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Calça Palazzo Feminina</p>
+                <p class="text-xs text-gray-500">A partir de R$ 36,00/pç</p>
+                <a href="https://www.centrofashionfortaleza.com.br" target="_blank" class="text-xs text-blue-500 font-semibold hover:underline">Centro Fashion →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
+              <span class="text-2xl font-black text-blue-300 w-8 text-center">9</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Bolsa de Palha/Rattan Artesanal</p>
+                <p class="text-xs text-gray-500">A partir de R$ 22,00/pç</p>
+                <a href="https://www.estacaofashionfortaleza.com.br" target="_blank" class="text-xs text-blue-500 font-semibold hover:underline">Estação Fashion →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
+              <span class="text-2xl font-black text-blue-300 w-8 text-center">10</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Short Feminino Tactel Estampado</p>
+                <p class="text-xs text-gray-500">A partir de R$ 18,00/pç</p>
+                <a href="https://www.centrofashionfortaleza.com.br" target="_blank" class="text-xs text-blue-500 font-semibold hover:underline">Centro Fashion →</a>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs text-gray-400 mt-4 text-center">* Preços estimados no atacado. Consulte: <a href="https://www.portalin.com.br/negocios/estacao-fashion-amplia-horarios-e-se-consolida-como-polo-da-moda-atacadista/" class="hover:underline text-blue-500">Estação Fashion Fortaleza</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SEÇÃO 4: POLO BRÁS (SP) ===== -->
+    <section id="bras" class="mb-10">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="h-8 w-1.5 bg-purple-600 rounded-full"></div>
+        <h2 class="text-2xl font-black text-gray-900">🏙️ Polo do Brás — Atacado (SP)</h2>
+        <span class="ml-auto text-xs text-gray-400 bg-gray-100 px-3 py-1 rounded-full">Brás · Bom Retiro · São Paulo</span>
+      </div>
+
+      <!-- BANNER BRÁS -->
+      <div class="bg-gradient-to-r from-purple-700 to-indigo-500 rounded-xl p-5 mb-5 text-white flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <p class="text-purple-100 text-xs font-semibold uppercase tracking-wide">📦 Compra Atacado Online</p>
+          <h3 class="font-black text-lg leading-tight">Feira da Madrugada: Seg–Sáb das 00h às 16h | +400 Lojas no Mega Polo Moda</h3>
+          <p class="text-purple-100 text-sm mt-1">Brás = volume e preço baixo • Bom Retiro = tendência e acabamento premium</p>
+        </div>
+        <a href="https://www.loggi.com/conteudos/empreendedorismo/feira-da-madrugada/" target="_blank"
+           class="bg-white text-purple-600 font-bold text-sm px-4 py-2 rounded-full hover:bg-purple-50 transition whitespace-nowrap">
+          Guia 2026 →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+
+        <!-- Mega Polo Moda -->
+        <article class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 card-hover">
+          <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&q=80" alt="Mega Polo Moda Bras" class="w-full h-40 object-cover" />
+          <div class="p-4">
+            <span class="text-xs font-bold text-purple-600 uppercase tracking-wide">🛍️ Maior da América Latina</span>
+            <h3 class="font-bold text-gray-900 mt-1 text-sm leading-snug">Mega Polo Moda: +400 lojas no Brás com renovação constante de coleções para lojistas</h3>
+            <p class="text-gray-500 text-xs mt-2 leading-relaxed">Referência nacional em moda atacadista, o Mega Polo Moda oferece moda feminina, masculina, infantil, plus size e acessórios com agilidade na renovação de coleções e preços competitivos.</p>
+            <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-50">
+              <span class="text-xs text-gray-400">📰 Mega Polo Moda / TripAdvisor</span>
+              <a href="https://www.megapolomoda.com.br/" target="_blank" class="text-purple-600 text-xs font-semibold hover:underline">Ver fonte →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fornecedores Digitais Brás -->
+        <article class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 card-hover">
+          <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80" alt="Atacado Digital Bras" class="w-full h-40 object-cover" />
+          <div class="p-4">
+            <span class="text-xs font-bold text-purple-600 uppercase tracking-wide">💻 Atacado Digital</span>
+            <h3 class="font-bold text-gray-900 mt-1 text-sm leading-snug">Zax App: +1.000 fornecedores do Brás com pagamento em até 90 dias no boleto</h3>
+            <p class="text-gray-500 text-xs mt-2 leading-relaxed">Plataforma permite comprar no atacado do Brás sem sair de casa. Mais de 1.000 fornecedores cadastrados com parcelamento em boleto de até 90 dias para lojistas de todo o Brasil.</p>
+            <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-50">
+              <span class="text-xs text-gray-400">📰 Correio Braziliense / Loggi</span>
+              <a href="https://www.correiobraziliense.com.br/cbradar/os-2-lugares-onde-o-brasil-inteiro-compra-roupas-de-atacado-para-usar-e-revender-e-a-moda-nasce-antes-de-chegar-as-vitrines/" target="_blank" class="text-purple-600 text-xs font-semibold hover:underline">Ver fonte →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- TOP 10 PRODUTOS BRÁS -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+        <div class="bg-purple-600 px-5 py-3 flex items-center gap-2">
+          <span class="text-white font-black text-lg">🏆 TOP 10</span>
+          <span class="text-purple-100 font-semibold text-sm">Produtos em Alta no Brás (SP) — Revenda e Tendências Maio 2026</span>
+        </div>
+        <div class="p-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
+              <span class="text-2xl font-black text-purple-300 w-8 text-center">1</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Calça Jeans Feminina Premium</p>
+                <p class="text-xs text-gray-500">A partir de R$ 28,00/pç — Bom Retiro</p>
+                <a href="https://www.megapolomoda.com.br/" target="_blank" class="text-xs text-purple-500 font-semibold hover:underline">Mega Polo Moda →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
+              <span class="text-2xl font-black text-purple-300 w-8 text-center">2</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Tênis Casual Unissex</p>
+                <p class="text-xs text-gray-500">A partir de R$ 45,00/pç</p>
+                <a href="https://www.megapolomoda.com.br/" target="_blank" class="text-xs text-purple-500 font-semibold hover:underline">Mega Polo Moda →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
+              <span class="text-2xl font-black text-purple-300 w-8 text-center">3</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Blusa Feminina Decote V</p>
+                <p class="text-xs text-gray-500">A partir de R$ 15,00/pç</p>
+                <a href="https://www.feiradamadrugadasp.com.br/" target="_blank" class="text-xs text-purple-500 font-semibold hover:underline">Feira da Madrugada →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
+              <span class="text-2xl font-black text-purple-300 w-8 text-center">4</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Conjunto Fitness (Top + Legging)</p>
+                <p class="text-xs text-gray-500">A partir de R$ 35,00/conjunto</p>
+                <a href="https://www.megapolomoda.com.br/" target="_blank" class="text-xs text-purple-500 font-semibold hover:underline">Mega Polo Moda →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
+              <span class="text-2xl font-black text-purple-300 w-8 text-center">5</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Bota Cano Médio Feminina</p>
+                <p class="text-xs text-gray-500">A partir de R$ 65,00/pç</p>
+                <a href="https://www.feiradamadrugadasp.com.br/" target="_blank" class="text-xs text-purple-500 font-semibold hover:underline">Feira da Madrugada →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
+              <span class="text-2xl font-black text-purple-300 w-8 text-center">6</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Vestido Plus Size Festa</p>
+                <p class="text-xs text-gray-500">A partir de R$ 55,00/pç</p>
+                <a href="https://www.megapolomoda.com.br/" target="_blank" class="text-xs text-purple-500 font-semibold hover:underline">Mega Polo Moda →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
+              <span class="text-2xl font-black text-purple-300 w-8 text-center">7</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Jaqueta Jeans Masculina</p>
+                <p class="text-xs text-gray-500">A partir de R$ 58,00/pç — Bom Retiro</p>
+                <a href="https://www.megapolomoda.com.br/" target="_blank" class="text-xs text-purple-500 font-semibold hover:underline">Mega Polo Moda →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
+              <span class="text-2xl font-black text-purple-300 w-8 text-center">8</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Bolsa Feminina Tote Bag</p>
+                <p class="text-xs text-gray-500">A partir de R$ 32,00/pç</p>
+                <a href="https://www.feiradamadrugadasp.com.br/" target="_blank" class="text-xs text-purple-500 font-semibold hover:underline">Feira da Madrugada →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
+              <span class="text-2xl font-black text-purple-300 w-8 text-center">9</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Camiseta Streetwear Estampada</p>
+                <p class="text-xs text-gray-500">A partir de R$ 19,00/pç</p>
+                <a href="https://www.feiradamadrugadasp.com.br/" target="_blank" class="text-xs text-purple-500 font-semibold hover:underline">Feira da Madrugada →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
+              <span class="text-2xl font-black text-purple-300 w-8 text-center">10</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Acessórios (colares, pulseiras)</p>
+                <p class="text-xs text-gray-500">A partir de R$ 5,00/pç</p>
+                <a href="https://www.feiradamadrugadasp.com.br/" target="_blank" class="text-xs text-purple-500 font-semibold hover:underline">Feira da Madrugada →</a>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs text-gray-400 mt-4 text-center">* Preços estimados no atacado. Consulte: <a href="https://www.megapolomoda.com.br/" class="hover:underline text-purple-500">Mega Polo Moda</a> &amp; <a href="https://www.loggi.com/conteudos/empreendedorismo/feira-da-madrugada/" class="hover:underline text-purple-500">Feira da Madrugada</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SEÇÃO 5: TIKTOK SHOP / TENDÊNCIAS DIGITAIS ===== -->
+    <section id="tiktok" class="mb-10">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="h-8 w-1.5 bg-pink-500 rounded-full"></div>
+        <h2 class="text-2xl font-black text-gray-900">📱 TikTok Shop & Tendências Digitais</h2>
+        <span class="ml-auto text-xs text-gray-400 bg-gray-100 px-3 py-1 rounded-full">Brasil · Maio 2026</span>
+      </div>
+
+      <!-- Estatísticas TikTok -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-gradient-to-br from-pink-500 to-red-500 rounded-xl p-4 text-white text-center">
+          <p class="text-3xl font-black">45%</p>
+          <p class="text-xs text-pink-100 mt-1">usuários conhecem o TikTok Shop</p>
+        </div>
+        <div class="bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl p-4 text-white text-center">
+          <p class="text-3xl font-black">31%</p>
+          <p class="text-xs text-purple-100 mt-1">já compraram pela plataforma</p>
+        </div>
+        <div class="bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl p-4 text-white text-center">
+          <p class="text-3xl font-black">#1</p>
+          <p class="text-xs text-indigo-100 mt-1">Moda é categoria líder no TikTok Shop</p>
+        </div>
+        <div class="bg-gradient-to-br from-cyan-500 to-indigo-500 rounded-xl p-4 text-white text-center">
+          <p class="text-3xl font-black">🔥</p>
+          <p class="text-xs text-cyan-100 mt-1">Viral = baixo custo + apelo visual forte</p>
+        </div>
+      </div>
+
+      <!-- Top 10 TikTok Moda -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mb-5">
+        <div class="bg-gradient-to-r from-pink-600 to-purple-600 px-5 py-3 flex items-center gap-2">
+          <span class="text-white font-black text-lg">🔥 TOP 10</span>
+          <span class="text-pink-100 font-semibold text-sm">Produtos de Moda Mais Comentados no TikTok Shop Brasil — Maio 2026</span>
+        </div>
+        <div class="p-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex items-start gap-3 p-3 bg-pink-50 rounded-lg">
+              <span class="text-2xl font-black text-pink-300 w-8 text-center">1</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Vestido Decote V Estampa Contrastante</p>
+                <p class="text-xs text-gray-500">~R$ 59,90 | Viral nos Reels e TikTok</p>
+                <a href="https://conteudo.stone.com.br/produtos-mais-vendidos-no-tiktok-shop-brasil/" target="_blank" class="text-xs text-pink-500 font-semibold hover:underline">Ver análise →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-pink-50 rounded-lg">
+              <span class="text-2xl font-black text-pink-300 w-8 text-center">2</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Jeans Feminino Cintura Alta Casual</p>
+                <p class="text-xs text-gray-500">~R$ 79,90 | Silhueta lisonjeira</p>
+                <a href="https://conteudo.stone.com.br/produtos-mais-vendidos-no-tiktok-shop-brasil/" target="_blank" class="text-xs text-pink-500 font-semibold hover:underline">Ver análise →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-pink-50 rounded-lg">
+              <span class="text-2xl font-black text-pink-300 w-8 text-center">3</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Bota Cano Curto Feminina</p>
+                <p class="text-xs text-gray-500">~R$ 129,90 | Tendência outono/inverno</p>
+                <a href="https://eprolo.com/br/top-selling-items-on-tiktok" target="_blank" class="text-xs text-pink-500 font-semibold hover:underline">Ver análise →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-pink-50 rounded-lg">
+              <span class="text-2xl font-black text-pink-300 w-8 text-center">4</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Conjunto Fitness (Top + Legging)</p>
+                <p class="text-xs text-gray-500">~R$ 89,90 | Praticidade + estilo</p>
+                <a href="https://conteudo.stone.com.br/produtos-mais-vendidos-no-tiktok-shop-brasil/" target="_blank" class="text-xs text-pink-500 font-semibold hover:underline">Ver análise →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-pink-50 rounded-lg">
+              <span class="text-2xl font-black text-pink-300 w-8 text-center">5</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Conjunto Crochê (Slow Fashion)</p>
+                <p class="text-xs text-gray-500">~R$ 149,90 | Alta demanda artesanal</p>
+                <a href="https://eprolo.com/br/top-selling-items-on-tiktok" target="_blank" class="text-xs text-pink-500 font-semibold hover:underline">Ver análise →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-pink-50 rounded-lg">
+              <span class="text-2xl font-black text-pink-300 w-8 text-center">6</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Maxi Vestido Liso Maximalista</p>
+                <p class="text-xs text-gray-500">~R$ 99,90 | Cores intensas em alta</p>
+                <a href="https://eprolo.com/br/top-selling-items-on-tiktok" target="_blank" class="text-xs text-pink-500 font-semibold hover:underline">Ver análise →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-pink-50 rounded-lg">
+              <span class="text-2xl font-black text-pink-300 w-8 text-center">7</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Bolsa Tote Bag Estampada</p>
+                <p class="text-xs text-gray-500">~R$ 49,90 | Viral #ootd</p>
+                <a href="https://conteudo.stone.com.br/produtos-mais-vendidos-no-tiktok-shop-brasil/" target="_blank" class="text-xs text-pink-500 font-semibold hover:underline">Ver análise →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-pink-50 rounded-lg">
+              <span class="text-2xl font-black text-pink-300 w-8 text-center">8</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Sobreposição Camisa + Cropped</p>
+                <p class="text-xs text-gray-500">~R$ 79,90 | Trend maximalismo</p>
+                <a href="https://eprolo.com/br/top-selling-items-on-tiktok" target="_blank" class="text-xs text-pink-500 font-semibold hover:underline">Ver análise →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-pink-50 rounded-lg">
+              <span class="text-2xl font-black text-pink-300 w-8 text-center">9</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Acessórios Statement (brincos grandes)</p>
+                <p class="text-xs text-gray-500">~R$ 29,90 | #statement jewelry</p>
+                <a href="https://conteudo.stone.com.br/produtos-mais-vendidos-no-tiktok-shop-brasil/" target="_blank" class="text-xs text-pink-500 font-semibold hover:underline">Ver análise →</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-pink-50 rounded-lg">
+              <span class="text-2xl font-black text-pink-300 w-8 text-center">10</span>
+              <div>
+                <p class="font-bold text-sm text-gray-800">Camiseta Streetwear com Bordado</p>
+                <p class="text-xs text-gray-500">~R$ 69,90 | Handmade trend</p>
+                <a href="https://eprolo.com/br/top-selling-items-on-tiktok" target="_blank" class="text-xs text-pink-500 font-semibold hover:underline">Ver análise →</a>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs text-gray-400 mt-4 text-center">* Preços de varejo estimados. Fontes: <a href="https://conteudo.stone.com.br/produtos-mais-vendidos-no-tiktok-shop-brasil/" class="hover:underline text-pink-500">Stone / TikTok Shop BR</a> &amp; <a href="https://eprolo.com/br/top-selling-items-on-tiktok" class="hover:underline text-pink-500">Eprolo TikTok Trends</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- RODAPÉ -->
+<footer class="bg-gray-900 text-gray-300 mt-8">
+  <div class="max-w-screen-xl mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <div class="bg-brand rounded px-2 py-1"><span class="text-white font-black text-sm">VINXS</span></div>
+          <span class="font-bold text-white">NOTÍCIAS DA MODA</span>
+        </div>
+        <p class="text-sm text-gray-400 leading-relaxed">Portal de notícias diário focado no setor têxtil e de moda brasileiro. Cobertura dos principais polos nacionais e tendências internacionais.</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-3 text-sm uppercase tracking-wide">Seções</h4>
+        <ul class="space-y-1.5 text-sm">
+          <li><a href="#internacional" class="hover:text-brand transition">🌍 Moda Internacional</a></li>
+          <li><a href="#agreste" class="hover:text-brand transition">🧵 Polo Agreste (PE)</a></li>
+          <li><a href="#fortaleza" class="hover:text-brand transition">🌊 Polo Fortaleza (CE)</a></li>
+          <li><a href="#bras" class="hover:text-brand transition">🏙️ Polo Brás (SP)</a></li>
+          <li><a href="#tiktok" class="hover:text-brand transition">📱 TikTok Shop</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-3 text-sm uppercase tracking-wide">Edições</h4>
+        <ul class="space-y-1.5 text-sm">
+          <li><a href="noticia_2026-05-06.html" class="text-brand font-semibold">📅 06/05/2026 (Hoje)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-gray-500">© 2026 VINXS Notícias da Moda. Gerado automaticamente em 06/05/2026.</p>
+      <p class="text-xs text-gray-500">Conteúdo baseado em fontes públicas. Verifique os links para informações atualizadas.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<div class="fixed bottom-6 right-6 flex flex-col items-end gap-3 z-50">
+  <a
+    id="whatsapp-btn"
+    href="#"
+    target="_blank"
+    class="bg-green-500 hover:bg-green-600 text-white font-bold px-4 py-3 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105 text-sm"
+    title="Compartilhar no WhatsApp"
+  >
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    Compartilhar no WhatsApp
+  </a>
+</div>
+
+<script>
+  // Relógio em tempo real
+  function updateTime() {
+    const now = new Date();
+    document.getElementById('live-time').textContent = now.toLocaleString('pt-BR', {
+      day: '2-digit', month: '2-digit', year: 'numeric',
+      hour: '2-digit', minute: '2-digit', second: '2-digit'
+    });
+  }
+  updateTime();
+  setInterval(updateTime, 1000);
+
+  // WhatsApp share button
+  const pageUrl = window.location.href;
+  const waText = encodeURIComponent('📰 Confira o resumo da moda de hoje!\n\n🌍 MET Gala 2026 | 🧵 Moda Center PE | 🌊 Polo Fortaleza | 🏙️ Brás SP | 📱 TikTok Shop\n\n' + pageUrl);
+  document.getElementById('whatsapp-btn').href = 'https://wa.me/?text=' + waText;
+</script>
+
+</body>
+</html>
